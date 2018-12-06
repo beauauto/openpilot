@@ -165,6 +165,7 @@ typedef struct UIState {
   int font_sans_regular;
   int font_sans_semibold;
   int font_sans_bold;
+  int font_sc;//cn
   int img_wheel;
   int img_face;
 
@@ -445,6 +446,8 @@ static void ui_init(UIState *s) {
   assert(s->font_sans_semibold >= 0);
   s->font_sans_bold = nvgCreateFont(s->vg, "sans-bold", "../assets/OpenSans-Bold.ttf");
   assert(s->font_sans_bold >= 0);
+  s->font_sc = nvgCreateFont(s->vg, "sc", "../assets/sc.ttf");
+  assert(s->font_sc >= 0);
 
   assert(s->img_wheel >= 0);
   s->img_wheel = nvgCreateImage(s->vg, "../assets/img_chffr_wheel.png", 1);
@@ -931,10 +934,10 @@ static void ui_draw_vision_maxspeed(UIState *s) {
   nvgStroke(s->vg);
 
   nvgTextAlign(s->vg, NVG_ALIGN_CENTER | NVG_ALIGN_BASELINE);
-  nvgFontFace(s->vg, "sans-regular");
+  nvgFontFace(s->vg, "sc");
   nvgFontSize(s->vg, 26*2.5);
   nvgFillColor(s->vg, nvgRGBA(255, 255, 255, 200));
-  nvgText(s->vg, viz_maxspeed_x+viz_maxspeed_w/2, 148, "MAX", NULL);
+  nvgText(s->vg, viz_maxspeed_x+viz_maxspeed_w/2, 148, "设速", NULL);
 
   nvgFontFace(s->vg, "sans-semibold");
   nvgFontSize(s->vg, 52*2.5);
@@ -1050,10 +1053,11 @@ static void ui_draw_vision_speed(UIState *s) {
   nvgFontSize(s->vg, 36*2.5);
   nvgFillColor(s->vg, nvgRGBA(255, 255, 255, 200));
 
+  nvgFontFace(s->vg, "sc");
   if (s->is_metric) {
-    nvgText(s->vg, viz_speed_x+viz_speed_w/2, 320, "kph", NULL);
+    nvgText(s->vg, viz_speed_x+viz_speed_w/2, 320, "公里/小时", NULL);
   } else {
-    nvgText(s->vg, viz_speed_x+viz_speed_w/2, 320, "mph", NULL);
+    nvgText(s->vg, viz_speed_x+viz_speed_w/2, 320, "英里/小时", NULL);
   }
 }
 
@@ -1187,23 +1191,23 @@ static void ui_draw_vision_alert(UIState *s, int va_size, int va_color,
   nvgTextAlign(s->vg, NVG_ALIGN_CENTER | NVG_ALIGN_BASELINE);
 
   if (va_size == ALERTSIZE_SMALL) {
-    nvgFontFace(s->vg, "sans-semibold");
+    nvgFontFace(s->vg, "sc");
     nvgFontSize(s->vg, 40*2.5);
     nvgText(s->vg, alr_x+alr_w/2, alr_y+alr_h/2+15, va_text1, NULL);
   } else if (va_size== ALERTSIZE_MID) {
-    nvgFontFace(s->vg, "sans-bold");
+    nvgFontFace(s->vg, "sc");
     nvgFontSize(s->vg, 48*2.5);
     nvgText(s->vg, alr_x+alr_w/2, alr_y+alr_h/2-45, va_text1, NULL);
-    nvgFontFace(s->vg, "sans-regular");
+    nvgFontFace(s->vg, "sc");
     nvgFontSize(s->vg, 36*2.5);
     nvgText(s->vg, alr_x+alr_w/2, alr_y+alr_h/2+75, va_text2, NULL);
   } else if (va_size== ALERTSIZE_FULL) {
     nvgFontSize(s->vg, (longAlert1?72:96)*2.5);
-    nvgFontFace(s->vg, "sans-bold");
+    nvgFontFace(s->vg, "sc");
     nvgTextAlign(s->vg, NVG_ALIGN_CENTER | NVG_ALIGN_MIDDLE);
     nvgTextBox(s->vg, alr_x, alr_y+(longAlert1?360:420), alr_w-60, va_text1, NULL);
     nvgFontSize(s->vg, 48*2.5);
-    nvgFontFace(s->vg, "sans-regular");
+    nvgFontFace(s->vg, "sc");
     nvgTextAlign(s->vg, NVG_ALIGN_CENTER | NVG_ALIGN_BOTTOM);
     nvgTextBox(s->vg, alr_x, alr_h-(longAlert1?300:360), alr_w-60, va_text2, NULL);
   }

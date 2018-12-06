@@ -75,140 +75,140 @@ ALERTS = [
 
   Alert(
       "fcw",
-      "BRAKE!",
-      "Risk of Collision",
+      "刹车!",
+      "有撞车危险",
       AlertStatus.critical, AlertSize.full,
       Priority.HIGHEST, VisualAlert.fcw, AudibleAlert.chimeWarningRepeat, 1., 2., 2.),
 
   Alert(
       "steerSaturated",
-      "TAKE CONTROL",
-      "Turn Exceeds Steering Limit",
+      "需要人工控制",
+      "转向扭矩超过限制",
       AlertStatus.userPrompt, AlertSize.mid,
       Priority.LOW, VisualAlert.steerRequired, AudibleAlert.chimePrompt, 1., 2., 3.),
 
   Alert(
       "steerTempUnavailable",
-      "TAKE CONTROL",
-      "Steering Temporarily Unavailable",
+      "需要人工控制",
+      "转向暂时不可用",
       AlertStatus.userPrompt, AlertSize.mid,
       Priority.LOW, VisualAlert.steerRequired, AudibleAlert.chimeWarning1, .4, 2., 3.),
 
   Alert(
       "steerTempUnavailableMute",
-      "TAKE CONTROL",
-      "Steering Temporarily Unavailable",
+      "需要人工控制",
+      "转向暂时不可用",
       AlertStatus.userPrompt, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.none, .2, .2, .2),
 
   Alert(
       "preDriverDistracted",
-      "KEEP EYES ON ROAD: User Appears Distracted",
+      "请看着前方道路：您看起来分心了",
       "",
       AlertStatus.normal, AlertSize.small,
       Priority.LOW, VisualAlert.steerRequired, AudibleAlert.none, .0, .1, .1, alert_rate=0.75),
 
   Alert(
       "promptDriverDistracted",
-      "KEEP EYES ON ROAD",
-      "User Appears Distracted",
+      "请看着前方道路",
+      "您看起来分心了",
       AlertStatus.userPrompt, AlertSize.mid,
       Priority.MID, VisualAlert.steerRequired, AudibleAlert.chimeWarning2, .1, .1, .1),
 
   Alert(
       "driverDistracted",
-      "DISENGAGE IMMEDIATELY",
-      "User Was Distracted",
+      "立即解除自动驾驶",
+      "用户分心了",
       AlertStatus.critical, AlertSize.full,
       Priority.HIGH, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, .1, .1, .1),
 
   Alert(
       "preDriverUnresponsive",
-      "TOUCH STEERING WHEEL: No Driver Monitoring",
+      "触摸方向盘：无驾驶员监控",
       "",
       AlertStatus.normal, AlertSize.small,
       Priority.LOW, VisualAlert.steerRequired, AudibleAlert.none, .0, .1, .1, alert_rate=0.75),
 
   Alert(
       "promptDriverUnresponsive",
-      "TOUCH STEERING WHEEL",
-      "User Is Unresponsive",
+      "触摸方向盘",
+      "用户没反应",
       AlertStatus.userPrompt, AlertSize.mid,
       Priority.MID, VisualAlert.steerRequired, AudibleAlert.chimeWarning2, .1, .1, .1),
 
   Alert(
       "driverUnresponsive",
-      "DISENGAGE IMMEDIATELY",
-      "User Was Unresponsive",
+      "立即解除自动驾驶",
+      "用户没反应",
       AlertStatus.critical, AlertSize.full,
       Priority.HIGH, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, .1, .1, .1),
 
   Alert(
       "driverMonitorOff",
-      "DRIVER MONITOR IS UNAVAILABLE",
-      "Accuracy Is Low",
+      "驾驶员监控器无法使用",
+      "准确度低",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.none, .4, 0., 4.),
 
   Alert(
       "driverMonitorOn",
-      "DRIVER MONITOR IS AVAILABLE",
-      "Accuracy Is High",
+      "驾驶员监控器可以使用",
+      "准确度高",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.none, .4, 0., 4.),
 
   Alert(
       "geofence",
-      "DISENGAGEMENT REQUIRED",
-      "Not in Geofenced Area",
+      "需要解除自动驾驶",
+      "不在地理围栏区域",
       AlertStatus.userPrompt, AlertSize.mid,
       Priority.HIGH, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, .1, .1, .1),
 
   Alert(
       "startup",
-      "Be ready to take over at any time",
-      "Always keep hands on wheel and eyes on road",
+      "随时准备好接管驾驶",
+      "始终把手放在方向盘上，眼睛注视前方道路",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW_LOWEST, VisualAlert.none, AudibleAlert.none, 0., 0., 15.),
 
   Alert(
       "ethicalDilemma",
-      "TAKE CONTROL IMMEDIATELY",
-      "Ethical Dilemma Detected",
+      "立即恢复人工驾驶",
+      "发现道德难题",
       AlertStatus.critical, AlertSize.full,
       Priority.HIGHEST, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, 1., 3., 3.),
 
   Alert(
       "steerTempUnavailableNoEntry",
-      "openpilot Unavailable",
-      "Steering Temporarily Unavailable",
+      "自动驾驶不可用",
+      "暂时无法控制方向盘",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 0., 3.),
 
   Alert(
       "manualRestart",
-      "TAKE CONTROL",
-      "Resume Driving Manually",
+      "恢复人工驾驶",
+      "恢复人工驾驶",
       AlertStatus.userPrompt, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.none, 0., 0., .2),
 
   Alert(
       "resumeRequired",
-      "STOPPED",
-      "Press Resume to Move",
+      "车停了",
+      "按继续键启动",
       AlertStatus.userPrompt, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.none, 0., 0., .2),
 
   Alert(
       "belowSteerSpeed",
-      "TAKE CONTROL",
-      "Steer Unavailable Below ",
+      "立即恢复人工驾驶",
+      "速度太低方向控制不可用 ",
       AlertStatus.userPrompt, AlertSize.mid,
       Priority.MID, VisualAlert.steerRequired, AudibleAlert.chimeWarning1, 0., 0., .1),
 
   Alert(
       "debugAlert",
-      "DEBUG ALERT",
+      "调试警报",
       "",
       AlertStatus.userPrompt, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.none, .1, .1, .1),
@@ -216,412 +216,412 @@ ALERTS = [
   # Non-entry only alerts
   Alert(
       "wrongCarModeNoEntry",
-      "openpilot Unavailable",
-      "Main Switch Off",
+      "自动驾驶不可用",
+      "主开关关闭",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 0., 3.),
 
   Alert(
       "dataNeededNoEntry",
-      "openpilot Unavailable",
-      "Data Needed for Calibration. Upload Drive, Try Again",
+      "自动驾驶不可用",
+      "校准需要数据。上传驾驶记录，再试一次",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 0., 3.),
 
   Alert(
       "outOfSpaceNoEntry",
-      "openpilot Unavailable",
-      "Out of Storage Space",
+      "自动驾驶不可用",
+      "存储空间用尽",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 0., 3.),
 
   Alert(
       "pedalPressedNoEntry",
-      "openpilot Unavailable",
-      "Pedal Pressed During Attempt",
+      "自动驾驶不可用",
+      "在尝试期间踩了油门",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, "brakePressed", AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "speedTooLowNoEntry",
-      "openpilot Unavailable",
-      "Speed Too Low",
+      "自动驾驶不可用",
+      "速度太低",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "brakeHoldNoEntry",
-      "openpilot Unavailable",
-      "Brake Hold Active",
+      "自动驾驶不可用",
+      "还在使用刹车",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "parkBrakeNoEntry",
-      "openpilot Unavailable",
-      "Park Brake Engaged",
+      "自动驾驶不可用",
+      "还在使用手刹",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "lowSpeedLockoutNoEntry",
-      "openpilot Unavailable",
-      "Cruise Fault: Restart the Car",
+      "自动驾驶不可用",
+      "巡航出错：从新启动",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "lowBatteryNoEntry",
-      "openpilot Unavailable",
-      "Low Battery",
+      "自动驾驶不可用",
+      "电池快耗尽",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   # Cancellation alerts causing soft disabling
   Alert(
       "overheat",
-      "TAKE CONTROL IMMEDIATELY",
-      "System Overheated",
+      "立即恢复人工驾驶",
+      "系统过热",
       AlertStatus.critical, AlertSize.full,
       Priority.MID, VisualAlert.steerRequired, AudibleAlert.chimeWarning2, .1, 2., 2.),
 
   Alert(
       "wrongGear",
-      "TAKE CONTROL IMMEDIATELY",
-      "Gear not D",
+      "立即恢复人工驾驶",
+      "不是D挡",
       AlertStatus.critical, AlertSize.full,
       Priority.MID, VisualAlert.steerRequired, AudibleAlert.chimeWarning2, .1, 2., 2.),
 
   Alert(
       "calibrationInvalid",
-      "TAKE CONTROL IMMEDIATELY",
-      "Calibration Invalid: Reposition EON and Recalibrate",
+      "立即恢复人工驾驶",
+      "校对无效: 调整EON位置并从新校对",
       AlertStatus.critical, AlertSize.full,
       Priority.MID, VisualAlert.steerRequired, AudibleAlert.chimeWarning2, .1, 2., 2.),
 
   Alert(
       "calibrationIncomplete",
-      "TAKE CONTROL IMMEDIATELY",
-      "Calibration in Progress",
+      "立即恢复人工驾驶",
+      "校对在进行中",
       AlertStatus.critical, AlertSize.full,
       Priority.MID, VisualAlert.steerRequired, AudibleAlert.chimeWarning2, .1, 2., 2.),
 
   Alert(
       "doorOpen",
-      "TAKE CONTROL IMMEDIATELY",
-      "Door Open",
+      "立即恢复人工驾驶",
+      "车门打开了",
       AlertStatus.critical, AlertSize.full,
       Priority.MID, VisualAlert.steerRequired, AudibleAlert.chimeWarning2, .1, 2., 2.),
 
   Alert(
       "seatbeltNotLatched",
-      "TAKE CONTROL IMMEDIATELY",
-      "Seatbelt Unlatched",
+      "立即恢复人工驾驶",
+      "没系安全带",
       AlertStatus.critical, AlertSize.full,
       Priority.MID, VisualAlert.steerRequired, AudibleAlert.chimeWarning2, .1, 2., 2.),
 
   Alert(
       "espDisabled",
-      "TAKE CONTROL IMMEDIATELY",
-      "ESP Off",
+      "立即恢复人工驾驶",
+      "ESP关闭",
       AlertStatus.critical, AlertSize.full,
       Priority.MID, VisualAlert.steerRequired, AudibleAlert.chimeWarning2, .1, 2., 2.),
 
   Alert(
       "lowBattery",
-      "TAKE CONTROL IMMEDIATELY",
-      "Low Battery",
+      "立即恢复人工驾驶",
+      "电池快耗尽",
       AlertStatus.critical, AlertSize.full,
       Priority.MID, VisualAlert.steerRequired, AudibleAlert.chimeWarning2, .1, 2., 2.),
 
   # Cancellation alerts causing immediate disabling
   Alert(
       "radarCommIssue",
-      "TAKE CONTROL IMMEDIATELY",
-      "Radar Error: Restart the Car",
+      "立即恢复人工驾驶",
+      "雷达出错：从新启动汽车",
       AlertStatus.critical, AlertSize.full,
       Priority.HIGHEST, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, 1., 3., 4.),
 
   Alert(
       "radarFault",
-      "TAKE CONTROL IMMEDIATELY",
-      "Radar Error: Restart the Car",
+      "立即恢复人工驾驶",
+      "雷达出错：从新启动汽车",
       AlertStatus.critical, AlertSize.full,
       Priority.HIGHEST, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, 1., 3., 4.),
 
   Alert(
       "modelCommIssue",
-      "TAKE CONTROL IMMEDIATELY",
-      "Model Error: Check Internet Connection",
+      "立即恢复人工驾驶",
+      "模型出错：检查互联网链接",
       AlertStatus.critical, AlertSize.full,
       Priority.HIGHEST, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, 1., 3., 4.),
 
   Alert(
       "controlsFailed",
-      "TAKE CONTROL IMMEDIATELY",
-      "Controls Failed",
+      "立即恢复人工驾驶",
+      "控制失败",
       AlertStatus.critical, AlertSize.full,
       Priority.HIGHEST, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, 1., 3., 4.),
 
   Alert(
       "controlsMismatch",
-      "TAKE CONTROL IMMEDIATELY",
-      "Controls Mismatch",
+      "立即恢复人工驾驶",
+      "控制不匹配",
       AlertStatus.critical, AlertSize.full,
       Priority.HIGHEST, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, 1., 3., 4.),
 
   Alert(
       "commIssue",
-      "TAKE CONTROL IMMEDIATELY",
-      "CAN Error: Check Connections",
+      "立即恢复人工驾驶",
+      "CAN总线出错：检查连接",
       AlertStatus.critical, AlertSize.full,
       Priority.HIGHEST, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, 1., 3., 4.),
 
   Alert(
       "steerUnavailable",
-      "TAKE CONTROL IMMEDIATELY",
-      "LKAS Fault: Restart the Car",
+      "立即恢复人工驾驶",
+      "车道保持出错：从新启动汽车",
       AlertStatus.critical, AlertSize.full,
       Priority.HIGHEST, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, 1., 3., 4.),
 
   Alert(
       "brakeUnavailable",
-      "TAKE CONTROL IMMEDIATELY",
-      "Cruise Fault: Restart the Car",
+      "立即恢复人工驾驶",
+      "巡航出错：从新启动汽车",
       AlertStatus.critical, AlertSize.full,
       Priority.HIGHEST, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, 1., 3., 4.),
 
   Alert(
       "gasUnavailable",
-      "TAKE CONTROL IMMEDIATELY",
-      "Gas Fault: Restart the Car",
+      "立即恢复人工驾驶",
+      "油门出错：从新启动汽车",
       AlertStatus.critical, AlertSize.full,
       Priority.HIGHEST, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, 1., 3., 4.),
 
   Alert(
       "reverseGear",
-      "TAKE CONTROL IMMEDIATELY",
-      "Reverse Gear",
+      "立即恢复人工驾驶",
+      "倒车挡",
       AlertStatus.critical, AlertSize.full,
       Priority.HIGHEST, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, 1., 3., 4.),
 
   Alert(
       "cruiseDisabled",
-      "TAKE CONTROL IMMEDIATELY",
-      "Cruise Is Off",
+      "立即恢复人工驾驶",
+      "巡航关闭",
       AlertStatus.critical, AlertSize.full,
       Priority.HIGHEST, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, 1., 3., 4.),
 
   Alert(
       "plannerError",
-      "TAKE CONTROL IMMEDIATELY",
-      "Planner Solution Error",
+      "立即恢复人工驾驶",
+      "计划解决方案错误",
       AlertStatus.critical, AlertSize.full,
       Priority.HIGHEST, VisualAlert.steerRequired, AudibleAlert.chimeWarningRepeat, 1., 3., 4.),
 
   # not loud cancellations (user is in control)
   Alert(
       "noTarget",
-      "openpilot Canceled",
-      "No close lead car",
+      "自动驾驶取消了",
+      "没有先导车",
       AlertStatus.normal, AlertSize.mid,
       Priority.HIGH, VisualAlert.none, AudibleAlert.chimeDisengage, .4, 2., 3.),
 
   Alert(
       "speedTooLow",
-      "openpilot Canceled",
-      "Speed too low",
+      "自动驾驶取消了",
+      "速度太低",
       AlertStatus.normal, AlertSize.mid,
       Priority.HIGH, VisualAlert.none, AudibleAlert.chimeDisengage, .4, 2., 3.),
 
   Alert(
       "invalidGiraffeHonda",
-      "Invalid Giraffe Configuration",
-      "Set 0111 for openpilot. 1011 for stock",
+      "无效线束连接器配置",
+      "博奥控制用0111，原车控制用1011",
       AlertStatus.normal, AlertSize.mid,
       Priority.HIGH, VisualAlert.none, AudibleAlert.chimeDisengage, .4, 2., 3.),
 
   # Cancellation alerts causing non-entry
   Alert(
       "overheatNoEntry",
-      "openpilot Unavailable",
-      "System overheated",
+      "自动驾驶不可用",
+      "系统过热",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "wrongGearNoEntry",
-      "openpilot Unavailable",
-      "Gear not D",
+      "自动驾驶不可用",
+      "不在D挡",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "calibrationInvalidNoEntry",
-      "openpilot Unavailable",
-      "Calibration Invalid: Reposition EON and Recalibrate",
+      "自动驾驶不可用",
+      "校对无效: 调整EON位置并从新校对",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "calibrationIncompleteNoEntry",
-      "openpilot Unavailable",
-      "Calibration in Progress",
+      "自动驾驶不可用",
+      "校对正在进行中",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "doorOpenNoEntry",
-      "openpilot Unavailable",
-      "Door open",
+      "自动驾驶不可用",
+      "车门打开了",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "seatbeltNotLatchedNoEntry",
-      "openpilot Unavailable",
-      "Seatbelt unlatched",
+      "自动驾驶不可用",
+      "没系安全带",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "espDisabledNoEntry",
-      "openpilot Unavailable",
-      "ESP Off",
+      "自动驾驶不可用",
+      "ESP关闭了",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "geofenceNoEntry",
-      "openpilot Unavailable",
-      "Not in Geofenced Area",
+      "自动驾驶不可用",
+      "不在地理围栏区域",
       AlertStatus.normal, AlertSize.mid,
       Priority.MID, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "radarCommIssueNoEntry",
-      "openpilot Unavailable",
-      "Radar Error: Restart the Car",
+      "自动驾驶不可用",
+      "雷达出错：从新启动汽车",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "radarFaultNoEntry",
-      "openpilot Unavailable",
-      "Radar Error: Restart the Car",
+      "自动驾驶不可用",
+      "雷达出错：从新启动汽车",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "modelCommIssueNoEntry",
-      "openpilot Unavailable",
-      "Model Error: Check Internet Connection",
+      "自动驾驶不可用",
+      "模型出错：检查互联网链接",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "controlsFailedNoEntry",
-      "openpilot Unavailable",
-      "Controls Failed",
+      "自动驾驶不可用",
+      "控制失败",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "commIssueNoEntry",
-      "openpilot Unavailable",
-      "CAN Error: Check Connections",
+      "自动驾驶不可用",
+      "CAN总线出错：检查连接",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "steerUnavailableNoEntry",
-      "openpilot Unavailable",
-      "LKAS Fault: Restart the Car",
+      "自动驾驶不可用",
+      "车道保持出错：从新启动汽车",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "brakeUnavailableNoEntry",
-      "openpilot Unavailable",
-      "Cruise Fault: Restart the Car",
+      "自动驾驶不可用",
+      "巡航出错：从新启动汽车",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "gasUnavailableNoEntry",
-      "openpilot Unavailable",
-      "Gas Error: Restart the Car",
+      "自动驾驶不可用",
+      "油门出错：从新启动汽车",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "reverseGearNoEntry",
-      "openpilot Unavailable",
-      "Reverse Gear",
+      "自动驾驶不可用",
+      "在倒车挡",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "cruiseDisabledNoEntry",
-      "openpilot Unavailable",
-      "Cruise is Off",
+      "自动驾驶不可用",
+      "巡航已关闭",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "noTargetNoEntry",
-      "openpilot Unavailable",
-      "No Close Lead Car",
+      "自动驾驶不可用",
+      "无先导车",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "plannerErrorNoEntry",
-      "openpilot Unavailable",
-      "Planner Solution Error",
+      "自动驾驶不可用",
+      "计划解决方案出错",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeError, .4, 2., 3.),
 
   Alert(
       "invalidGiraffeHondaNoEntry",
-      "openpilot Unavailable",
-      "Set 0111 for openpilot. 1011 for stock",
+      "无效线束连接器配置",
+      "博奥控制用0111，原车控制用1011",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW, VisualAlert.none, AudibleAlert.chimeDisengage, .4, 2., 3.),
 
   # permanent alerts
   Alert(
       "steerUnavailablePermanent",
-      "LKAS Fault: Restart the car to engage",
+      "车道保持出错：从新启动汽车",
       "",
       AlertStatus.normal, AlertSize.small,
       Priority.LOW_LOWEST, VisualAlert.none, AudibleAlert.none, 0., 0., .2),
 
   Alert(
       "brakeUnavailablePermanent",
-      "Cruise Fault: Restart the car to engage",
+      "巡航出错：从新启动汽车",
       "",
       AlertStatus.normal, AlertSize.small,
       Priority.LOW_LOWEST, VisualAlert.none, AudibleAlert.none, 0., 0., .2),
 
   Alert(
       "lowSpeedLockoutPermanent",
-      "Cruise Fault: Restart the car to engage",
+      "巡航出错：从新启动汽车",
       "",
       AlertStatus.normal, AlertSize.small,
       Priority.LOW_LOWEST, VisualAlert.none, AudibleAlert.none, 0., 0., .2),
 
   Alert(
       "calibrationIncompletePermanent",
-      "Calibration in Progress: ",
-      "Drive Above ",
+      "正在校准: ",
+      "提速到 ",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOWEST, VisualAlert.none, AudibleAlert.none, 0., 0., .2),
 
   Alert(
       "invalidGiraffeHondaPermanent",
-      "Invalid Giraffe Configuration",
-      "Set 0111 for openpilot. 1011 for stock",
+      "无效线束连接器配置",
+      "博奥控制用0111，原车控制用1011",
       AlertStatus.normal, AlertSize.mid,
       Priority.LOW_LOWEST, VisualAlert.none, AudibleAlert.none, 0., 0., .2),
 ]
